@@ -106,3 +106,4 @@ def test_extract_menu_item_expect_price_1549():
 # Run this file with debugging
 if __name__ == "__main__":
     test_should_pass()
+    test_c
