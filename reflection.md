@@ -22,4 +22,4 @@ Examples:
 **Best Reflection** "I learned when to use while vs for loops. While loops are for sentiel-controlled values (waiting for a condition to occur), vs for loops are for iterating over collections of fixed values."
 
 `--- Reflection Below This Line ---`
-
+There were a couple of tags that I was confused about and had to look at the solutions for. I still don't fully understand this line: row = title.query_selector("~ *").query_selector("~ *") or where they are in the html on the site. I also had to change the imports in menu extractor to make the tests pass. Other than that this was a very helpful assignment and I learned a lot about web scraping. 

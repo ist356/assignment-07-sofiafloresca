@@ -10,8 +10,22 @@ def tullyscraper(playwright: Playwright) -> None:
     page = context.new_page()
     page.goto("https://www.tullysgoodtimes.com/menus/")
 
-    # TODO Write code here
-    
+    titles = page.query_selector_all('h3.foodmenu__menu-section-title')
+    scraped = []
+    for title in titles:
+        title_text = title.inner_text()
+        print("MENU SECTION:", title_text)
+        row = title.query_selector("~ *").query_selector("~ *")
+        items = row.query_selector_all("div.foodmenu__menu-item-wrapper")
+        for item in items:
+            item_text = item.inner_text()
+            scraped_item = extract_menu_item(title_text, item_text)
+            print(f"  MENU ITEM: {scraped_item.name}")
+            scraped.append(scraped_item.to_dict())
+
+    df = pd.DataFrame(scraped)
+    df.to_csv("cache/tullys_menu.csv", index=False)
+        
     # ---------------------
     context.close()
     browser.close()

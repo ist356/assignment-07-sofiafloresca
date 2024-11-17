@@ -28,3 +28,4 @@ def test_tullyscraper_menu_csv_file_proper_rows_and_cols():
 # Run this file with debugging
 if __name__ == "__main__":
     test_should_pass()
+    test_tullyscraper_menu_csv_file_exists()
